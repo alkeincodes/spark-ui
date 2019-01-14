@@ -1,3 +1,97 @@
+.sp-btn-danger {
+  background-color: #ff3c38;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  padding: 5px;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.sp-btn-danger:hover {
+  background-color: rgba(255, 60, 56, 0.9);
+}
+.sp-btn-danger:focus {
+  outline: none;
+}
 
+.sp-btn-warning {
+  background-color: #ff8c42;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  padding: 5px;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.sp-btn-warning:hover {
+  background-color: rgba(255, 140, 66, 0.9);
+}
+.sp-btn-warning:focus {
+  outline: none;
+}
+
+.sp-btn-primary {
+  background-color: #14cbde;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  padding: 5px;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.sp-btn-primary:hover {
+  background-color: rgba(20, 203, 222, 0.9);
+}
+.sp-btn-primary:focus {
+  outline: none;
+}
+
+.sp-btn-success {
+  background-color: #33b737;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  padding: 5px;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.sp-btn-success:hover {
+  background-color: rgba(51, 183, 55, 0.9);
+}
+.sp-btn-success:focus {
+  outline: none;
+}
+
+.small {
+  font-size: 0.8em;
+}
+
+.medium {
+  font-size: 1.2em;
+}
+
+.large {
+  font-size: 1.5em;
+}
 
 /*# sourceMappingURL=app.css.map */
