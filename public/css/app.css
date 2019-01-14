@@ -1,5 +1,6 @@
-.sp-btn-danger {
-  background-color: #ff3c38;
+@import url("https://fonts.googleapis.com/css?family=Lato");
+button {
+  font-family: "Lato", sans-serif;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
   padding: 5px;
@@ -11,6 +12,10 @@
   color: #fff;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+.sp-btn-danger {
+  background-color: #ff3c38;
 }
 .sp-btn-danger:hover {
   background-color: rgba(255, 60, 56, 0.9);
@@ -21,17 +26,6 @@
 
 .sp-btn-warning {
   background-color: #ff8c42;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-  padding: 5px;
-  border: 0;
-  border-radius: 6px;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  color: #fff;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
 }
 .sp-btn-warning:hover {
   background-color: rgba(255, 140, 66, 0.9);
@@ -42,17 +36,6 @@
 
 .sp-btn-primary {
   background-color: #14cbde;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-  padding: 5px;
-  border: 0;
-  border-radius: 6px;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  color: #fff;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
 }
 .sp-btn-primary:hover {
   background-color: rgba(20, 203, 222, 0.9);
@@ -63,22 +46,23 @@
 
 .sp-btn-success {
   background-color: #33b737;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-  padding: 5px;
-  border: 0;
-  border-radius: 6px;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  color: #fff;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
 }
 .sp-btn-success:hover {
   background-color: rgba(51, 183, 55, 0.9);
 }
 .sp-btn-success:focus {
+  outline: none;
+}
+
+.sp-btn-outline {
+  background-color: rgba(0, 0, 0, 0);
+  color: #8c8c8c;
+  border: 1px solid #8c8c8c;
+}
+.sp-btn-outline:hover {
+  background-color: rgba(140, 140, 140, 0.1);
+}
+.sp-btn-outline:focus {
   outline: none;
 }
 

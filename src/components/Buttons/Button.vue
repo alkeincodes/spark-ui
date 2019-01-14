@@ -31,6 +31,8 @@
 				this.className = 'sp-btn-warning '+this.size
 			} else if(this.type == 'success') {
 				this.className = 'sp-btn-success '+this.size
+			} else if(this.type == 'outline') {
+				this.className = 'sp-btn-outline '+this.size
 			}
 		}
 	}
