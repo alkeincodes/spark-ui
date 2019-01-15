@@ -1,4 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Lato");
+/*
+ * GLOBAL
+ */
+.sp-spacer {
+  padding: 0;
+  margin: 0;
+  -webkit-box-flex: 1 !important;
+  -ms-flex-positive: 1 !important;
+  flex-grow: 1 !important;
+  background: transparent;
+}
+
 button {
   font-family: "Lato", sans-serif;
   -webkit-transition: all 0.2s ease;
@@ -12,6 +24,11 @@ button {
   color: #fff;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.09);
+}
+button:active {
+  position: relative;
+  top: 1px;
 }
 
 .sp-btn-danger {
@@ -76,6 +93,121 @@ button {
 
 .large {
   font-size: 1.5em;
+}
+
+/*
+ * ALERT
+ */
+.sp-alert-container {
+  padding: 1em 1.5em;
+  border-radius: 5px;
+  color: #fff;
+  width: 100%;
+}
+
+.sp-alert-content {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  align-items: center;
+  -webkit-user-select: none;
+  /* Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE10+/Edge */
+  user-select: none;
+  /* Standard */
+}
+.sp-alert-content .alert-icon {
+  height: 1em;
+  font-size: 2em;
+  color: rgba(0, 0, 0, 0.2);
+}
+.sp-alert-content .alert-icon {
+  padding: 5px;
+}
+.sp-alert-content .alert-close {
+  font-weight: bold;
+  text-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.09);
+  color: #00000052;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.sp-alert-content .alert-close:hover {
+  color: black;
+  transition: all 0.3s ease;
+}
+
+.alert-danger {
+  background-color: #ff3c38;
+}
+
+.alert-success {
+  background-color: #33b737;
+}
+
+.alert-warning {
+  background-color: #ff8c42;
+}
+
+.alert-info {
+  background-color: #14cbde;
+}
+
+/*
+ * BREADCRUMBS
+ */
+.sp-breadcrumbs-container {
+  background-color: #f3f3f3;
+  padding: 1em 2em;
+}
+
+.sp-breadcrumbs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sp-breadcrumbs li {
+  float: left;
+  padding: 3px;
+}
+.sp-breadcrumbs li a {
+  text-decoration: none;
+  color: #0091ff !important;
+}
+.sp-breadcrumbs .active a {
+  color: #565656 !important;
+}
+.sp-breadcrumbs:after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+/* 
+ * MODAL
+ */
+.modal-enter {
+  opacity: 0;
+}
+
+.modal-leave-active {
+  opacity: 0;
+}
+
+.modal-enter-active, .modal-leave-active {
+  transition: opacity 0.5s;
+}
+
+.modal-enter, .modal-leave-to {
+  opacity: 0;
 }
 
 /*# sourceMappingURL=app.css.map */

@@ -4,6 +4,19 @@ $primary: #14cbde;
 $warning: #ff8c42;
 $danger: #ff3c38;
 $success: #33b737;
+$boxShadow: 0 4px 20px 0 rgba(0,0,0,.09);
+
+/*
+ * GLOBAL
+ */
+.sp-spacer {
+ 	padding: 0;
+	margin: 0;
+	-webkit-box-flex: 1!important;
+	-ms-flex-positive: 1!important;
+	flex-grow: 1!important;
+	background: transparent;
+}
 
 button {
 	font-family: 'Lato', sans-serif;
@@ -18,6 +31,12 @@ button {
 	color: #fff;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
+	box-shadow: $boxShadow;
+
+	&:active {
+		position: relative;
+		top: 1px;
+	}
 }
 
 .sp-btn-danger {
@@ -87,4 +106,136 @@ button {
 
 .large {
 	font-size: 1.5em
+}
+
+/*
+ * ALERT
+ */
+
+.sp-alert-container {
+	padding: 1em 1.5em;
+	border-radius: 5px;
+	color: #fff;
+	width: 100%;
+}
+
+.sp-alert-content {
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display:flex;
+	align-items: center;
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+
+	.alert-icon {
+		height: 1em;
+		font-size: 2em;
+		color: rgba(0,0,0,.2)
+	}
+
+	.alert-icon{
+		padding: 5px;
+	}
+
+	.alert-close {
+		font-weight: bold;
+		text-shadow: $boxShadow;
+		color: #00000052;
+		cursor: pointer;
+		transition: all 0.3s ease;
+
+		&:hover {
+			color: black;
+			transition: all 0.3s ease;
+		}
+	}
+}
+
+.alert-danger {
+	background-color: $danger;
+}
+
+.alert-success {
+	background-color: $success;
+}
+
+.alert-warning {
+	background-color: $warning;
+}
+
+.alert-info {
+	background-color: $primary;
+}
+
+/*
+ * BREADCRUMBS
+ */
+
+.sp-breadcrumbs-container {
+	background-color: #f3f3f3;
+	padding: 1em 2em;
+}
+
+.sp-breadcrumbs {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+
+	li {
+		float: left;
+		padding: 3px;
+
+		a {
+			text-decoration: none;
+			color: #0091ff !important;
+		}
+	}
+
+	.active {
+		a {
+			color: #565656 !important
+		}
+	}
+
+	// .sp-breadcrumbs-item + .sp-breadcrumbs-item::before {
+	// 	display: inline-block;
+	// 	padding-right: .5rem;
+	// 	content: "/";
+	// }
+
+	&:after {
+		display: block;
+		content: '';
+		clear: both;
+	}
+}
+
+/* 
+ * MODAL
+ */
+
+
+.modal-enter {
+  opacity: 0;
+}
+
+.modal-leave-active {
+  opacity: 0;
+}
+
+// .modal-enter .modal-container,
+// .modal-leave-active .modal-container {
+//   -webkit-transform: scale(1.1);
+//   transform: scale(1.1);
+// }
+
+.modal-enter-active, .modal-leave-active {
+  transition: opacity .5s;
+}
+.modal-enter, .modal-leave-to /* .modal-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
