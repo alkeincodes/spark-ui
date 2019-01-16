@@ -54,10 +54,14 @@
       </div>
 
       <h3>Modal</h3>
-      <sp-button type="success" @click="testing">Open Modal</sp-button>
-      <sp-modal>
-        a
-      </sp-modal>
+      <div class="spark-button-components">
+        <sp-button type="success" @click="showDefaultModal = true">Open Default Modal</sp-button>
+        <sp-button type="warning" @click="showZoomModal = true">Open Zoom Modal</sp-button>
+        <sp-button type="primary" @click="showSpinModal = true">Open Spin Modal</sp-button>
+      </div>
+      <sp-modal v-show="showDefaultModal" @close="showDefaultModal = false"></sp-modal>
+      <sp-modal v-show="showZoomModal" @close="showZoomModal = false" effect="zoom"></sp-modal>
+      <sp-modal v-show="showSpinModal" @close="showSpinModal = false" effect="spin"></sp-modal>
     </div>
   </div>
 </template>
@@ -77,7 +81,9 @@ export default {
         { name: 'Link 2', href: 'www.github.com' },
         { name: 'Link 3', href: 'www.youtube.com', active: true },
       ],
-      showModal: false
+      showDefaultModal: false,
+      showZoomModal: false,
+      showSpinModal: false
     }
   },
   methods: {

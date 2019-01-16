@@ -4,13 +4,21 @@ $primary: #14cbde;
 $warning: #ff8c42;
 $danger: #ff3c38;
 $success: #33b737;
+$gradientPrimary: -webkit-linear-gradient(to right, #14cbde , #5ee7fd);
+$gradientPrimary: linear-gradient(to right, #14cbde , #5ee7fd);
+$gradientSuccess: -webkit-linear-gradient(to right, #33b737 , #38ef7d);
+$gradientSuccess: linear-gradient(to right, #33b737 , #38ef7d);
+$gradientDanger: -webkit-linear-gradient(to right, #ff3c38 , #fd615e);
+$gradientDanger: linear-gradient(to right, #ff3c38 , #fd615e);
+$gradientWarning: -webkit-linear-gradient(to right, #ff8c42 , #f7b733);
+$gradientWarning: linear-gradient(to right, #ff8c42 , #f7b733);
 $boxShadow: 0 4px 20px 0 rgba(0,0,0,.09);
 
 /*
  * GLOBAL
  */
 .sp-spacer {
- 	padding: 0;
+	padding: 0;
 	margin: 0;
 	-webkit-box-flex: 1!important;
 	-ms-flex-positive: 1!important;
@@ -22,7 +30,7 @@ button {
 	font-family: 'Lato', sans-serif;
 	-webkit-transition: all .2s ease;
 	transition: all .2s ease;
-	padding: 5px;
+	padding: 10px;
 	border: 0;
 	border-radius: 6px;
 	cursor: pointer;
@@ -32,6 +40,10 @@ button {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	box-shadow: $boxShadow;
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
 
 	&:active {
 		position: relative;
@@ -40,7 +52,7 @@ button {
 }
 
 .sp-btn-danger {
-	background-color: $danger;
+	background-image: $gradientDanger;
 
 	&:hover {
 		background-color: rgba($danger, .9);
@@ -51,7 +63,7 @@ button {
 }
 
 .sp-btn-warning {
-	background-color: $warning;
+	background-image: $gradientWarning;
 
 	&:hover {
 		background-color: rgba($warning, .9);
@@ -62,7 +74,7 @@ button {
 }
 
 .sp-btn-primary {
-	background-color: $primary;
+	background-image: $gradientPrimary;
 
 	&:hover {
 		background-color: rgba($primary, .9);
@@ -73,7 +85,7 @@ button {
 }
 
 .sp-btn-success {
-	background-color: $success;
+	background-image: $gradientSuccess;
 
 	&:hover {
 		background-color: rgba($success, .9);
@@ -156,19 +168,20 @@ button {
 }
 
 .alert-danger {
-	background-color: $danger;
+	background-image: $gradientDanger;
 }
 
 .alert-success {
-	background-color: $success;
+	// background-color: $success;
+	background-image: $gradientSuccess;
 }
 
 .alert-warning {
-	background-color: $warning;
+	background-image: $gradientWarning;
 }
 
 .alert-info {
-	background-color: $primary;
+	background-image: $gradientPrimary;
 }
 
 /*
@@ -218,24 +231,96 @@ button {
  * MODAL
  */
 
+.modal-mask {
+	position: fixed;
+	z-index: 9998;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .5);
+	transition: opacity .3s ease;
 
-.modal-enter {
-  opacity: 0;
+	.close-area {
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		z-index: 0;
+	}
+
+	.modal-container {
+		position: relative;
+		top: 20%;
+		height: 60%;
+		width: 50%;
+		margin: 0 auto;
+		background: #fff;
+		box-shadow: 0px 2px 20px 0 rgba(0,0,0,.1);
+		transition: all .3s ease;
+
+		.modal-content {
+			padding: 1.5em 2em;
+
+			.modal-header {
+				h3 {
+					padding: 0;
+					margin: 0;
+				}
+			}
+
+			.modal-body {
+				margin: 2em 0;
+			}
+
+			.modal-footer {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				z-index: 10000;
+				height: 5em;
+				width: 100%;
+				border-top: 5px dotted #dedede;
+
+				div {
+					padding: 5px;
+					text-align: right;
+					position: absolute;
+					bottom: 10px;
+					right: 10px;
+				}
+			}
+		}
+	}
+
 }
 
-.modal-leave-active {
-  opacity: 0;
-}
 
-// .modal-enter .modal-container,
-// .modal-leave-active .modal-container {
-//   -webkit-transform: scale(1.1);
-//   transform: scale(1.1);
-// }
-
-.modal-enter-active, .modal-leave-active {
+.fade-enter-active, .fade-leave-active {
   transition: opacity .5s;
 }
-.modal-enter, .modal-leave-to /* .modal-leave-active below version 2.1.8 */ {
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
+}
+
+.zoom-enter-active, .zoom-leave-active {
+  transition: all .5s;
+}
+.zoom-enter, .zoom-leave-to /* .fade-leave-active below version 2.1.8 */ {
+	opacity: 0;
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+.spin-enter-active, .spin-leave-active {
+  transition: all .5s;
+}
+.spin-enter, .spin-leave-to /* .fade-leave-active below version 2.1.8 */ {
+	opacity: 0;
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+
+	.modal-container {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
 }

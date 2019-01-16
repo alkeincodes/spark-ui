@@ -15,7 +15,7 @@ button {
   font-family: "Lato", sans-serif;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
-  padding: 5px;
+  padding: 10px;
   border: 0;
   border-radius: 6px;
   cursor: pointer;
@@ -25,6 +25,14 @@ button {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.09);
+  -webkit-user-select: none;
+  /* Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE10+/Edge */
+  user-select: none;
+  /* Standard */
 }
 button:active {
   position: relative;
@@ -32,7 +40,7 @@ button:active {
 }
 
 .sp-btn-danger {
-  background-color: #ff3c38;
+  background-image: linear-gradient(to right, #ff3c38, #fd615e);
 }
 .sp-btn-danger:hover {
   background-color: rgba(255, 60, 56, 0.9);
@@ -42,7 +50,7 @@ button:active {
 }
 
 .sp-btn-warning {
-  background-color: #ff8c42;
+  background-image: linear-gradient(to right, #ff8c42, #f7b733);
 }
 .sp-btn-warning:hover {
   background-color: rgba(255, 140, 66, 0.9);
@@ -52,7 +60,7 @@ button:active {
 }
 
 .sp-btn-primary {
-  background-color: #14cbde;
+  background-image: linear-gradient(to right, #14cbde, #5ee7fd);
 }
 .sp-btn-primary:hover {
   background-color: rgba(20, 203, 222, 0.9);
@@ -62,7 +70,7 @@ button:active {
 }
 
 .sp-btn-success {
-  background-color: #33b737;
+  background-image: linear-gradient(to right, #33b737, #38ef7d);
 }
 .sp-btn-success:hover {
   background-color: rgba(51, 183, 55, 0.9);
@@ -146,19 +154,19 @@ button:active {
 }
 
 .alert-danger {
-  background-color: #ff3c38;
+  background-image: linear-gradient(to right, #ff3c38, #fd615e);
 }
 
 .alert-success {
-  background-color: #33b737;
+  background-image: linear-gradient(to right, #33b737, #38ef7d);
 }
 
 .alert-warning {
-  background-color: #ff8c42;
+  background-image: linear-gradient(to right, #ff8c42, #f7b733);
 }
 
 .alert-info {
-  background-color: #14cbde;
+  background-image: linear-gradient(to right, #14cbde, #5ee7fd);
 }
 
 /*
@@ -194,20 +202,89 @@ button:active {
 /* 
  * MODAL
  */
-.modal-enter {
-  opacity: 0;
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.3s ease;
+}
+.modal-mask .close-area {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+}
+.modal-mask .modal-container {
+  position: relative;
+  top: 20%;
+  height: 60%;
+  width: 50%;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0px 2px 20px 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.modal-mask .modal-container .modal-content {
+  padding: 1.5em 2em;
+}
+.modal-mask .modal-container .modal-content .modal-header h3 {
+  padding: 0;
+  margin: 0;
+}
+.modal-mask .modal-container .modal-content .modal-body {
+  margin: 2em 0;
+}
+.modal-mask .modal-container .modal-content .modal-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 10000;
+  height: 5em;
+  width: 100%;
+  border-top: 5px dotted #dedede;
+}
+.modal-mask .modal-container .modal-content .modal-footer div {
+  padding: 5px;
+  text-align: right;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }
 
-.modal-leave-active {
-  opacity: 0;
-}
-
-.modal-enter-active, .modal-leave-active {
+.fade-enter-active, .fade-leave-active {
   transition: opacity 0.5s;
 }
 
-.modal-enter, .modal-leave-to {
+.fade-enter, .fade-leave-to {
   opacity: 0;
+}
+
+.zoom-enter-active, .zoom-leave-active {
+  transition: all 0.5s;
+}
+
+.zoom-enter, .zoom-leave-to {
+  opacity: 0;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.spin-enter-active, .spin-leave-active {
+  transition: all 0.5s;
+}
+
+.spin-enter, .spin-leave-to {
+  opacity: 0;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.spin-enter .modal-container, .spin-leave-to .modal-container {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
 }
 
 /*# sourceMappingURL=app.css.map */
