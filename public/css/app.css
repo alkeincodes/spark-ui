@@ -11,6 +11,20 @@
   background: transparent;
 }
 
+/*
+ * GRID COMPONENT
+ */
+.sp-grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.sp-grid-container .sp-grid-item {
+  padding: 10px;
+}
+
+/*
+ * BUTTON
+ */
 button {
   font-family: "Lato", sans-serif;
   -webkit-transition: all 0.2s ease;
@@ -255,6 +269,9 @@ button:active {
   right: 10px;
 }
 
+/*
+ *MODAL ANIMATION
+ */
 .fade-enter-active, .fade-leave-active {
   transition: opacity 0.5s;
 }
@@ -285,6 +302,39 @@ button:active {
 .spin-enter .modal-container, .spin-leave-to .modal-container {
   -webkit-transform: rotate(360deg);
   transform: rotate(360deg);
+}
+
+/*
+ * CARD
+ */
+.sp-card-container {
+  font-family: "Lato", sans-serif;
+  width: 30em;
+  height: auto;
+  -webkit-box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.1);
+}
+.sp-card-container .sp-card-content .sp-card-header {
+  text-align: left;
+}
+.sp-card-container .sp-card-content .sp-card-header h3 {
+  padding: 1em 0.8em;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 6px 15px;
+}
+.sp-card-container .sp-card-content .sp-card-image {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+}
+.sp-card-container .sp-card-content .sp-card-image img {
+  width: 100%;
+}
+.sp-card-container .sp-card-content .sp-card-body div {
+  padding: 15px;
+}
+.sp-card-container .sp-card-content .sp-card-footer {
+  padding: 1em;
+  text-align: left;
 }
 
 /*# sourceMappingURL=app.css.map */
