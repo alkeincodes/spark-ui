@@ -14,12 +14,29 @@
 /*
  * GRID COMPONENT
  */
+.sp-row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
 .sp-grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
 }
 .sp-grid-container .sp-grid-item {
   padding: 10px;
+}
+
+.sp-grid-expand {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
+}
+.sp-grid-expand .sp-grid-item {
+  padding: 10px;
+  flex-grow: 1;
+  flex-basis: 0;
 }
 
 /*
@@ -309,8 +326,9 @@ button:active {
  */
 .sp-card-container {
   font-family: "Lato", sans-serif;
-  width: 30em;
+  width: 90%;
   height: auto;
+  margin: 0 auto;
   -webkit-box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.1);
 }
@@ -335,6 +353,72 @@ button:active {
 .sp-card-container .sp-card-content .sp-card-footer {
   padding: 1em;
   text-align: left;
+}
+
+/*
+ * CHIPS
+ */
+.sp-chip {
+  display: inline-block;
+  padding: 0 17px;
+  height: 35px;
+  font-size: 14px;
+  line-height: 35px;
+  border-radius: 25px;
+  background-color: #f1f1f1;
+}
+.sp-chip img {
+  float: left;
+  margin: 0 10px 0 -17.5px;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
+.sp-chip .close {
+  color: #7d7d7d;
+  border-radius: 50%;
+  position: relative;
+  right: -8px;
+  width: 25px;
+  height: 25px;
+  top: 1px;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+.sp-chip .close:focus {
+  outline: none;
+}
+.sp-chip .close:active {
+  position: relative;
+  top: 2px;
+}
+.sp-chip .close:hover {
+  color: #fff;
+  background-color: #ff3c38;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.sp-chip-danger {
+  background-image: linear-gradient(to right, #ff3c38, #fd615e);
+  color: #fff;
+}
+
+.sp-chip-success {
+  background-image: linear-gradient(to right, #33b737, #38ef7d);
+  color: #fff;
+}
+
+.sp-chip-primary {
+  background-image: linear-gradient(to right, #14cbde, #5ee7fd);
+  color: #fff;
+}
+
+.sp-chip-warning {
+  background-image: linear-gradient(to right, #ff8c42, #f7b733);
+  color: #fff;
 }
 
 /*# sourceMappingURL=app.css.map */

@@ -64,49 +64,83 @@
 			<sp-modal v-show="showSpinModal" @close="showSpinModal = false" effect="spin"></sp-modal>
 
 			<h3>Card</h3>
-			<div class="sp-grid-container">
-				<div class="sp-grid-item">
-					<sp-card>
-						<span slot="header">Spark Card</span>
+			<div class="sp-row">
+				<div class="sp-grid-container">
+					<div class="sp-grid-item">
+						<sp-card>
+							<span slot="header">Spark Card</span>
 
-						<div slot="body">
-							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-						</div>
+							<div slot="body">
+								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+							</div>
 
-						<div slot="footer">
-							<sp-button type="success">Go somewhere</sp-button>
-						</div>
-					</sp-card>
-				</div>
-				<div class="sp-grid-item">
-					<sp-card image>
-						<span slot="header">Spark Card</span>
-						<div slot="image">
-							<img alt="Vue logo" src="./assets/card-image.jpg">
-						</div>
-						<div slot="body">
-							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-						</div>
+							<div slot="footer">
+								<sp-button type="success">Go somewhere</sp-button>
+							</div>
+						</sp-card>
+					</div>
+					<div class="sp-grid-item">
+						<sp-card image>
+							<span slot="header">Spark Card</span>
+							<div slot="image">
+								<img alt="Vue logo" src="./assets/card-image.jpg">
+							</div>
+							<div slot="body">
+								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+							</div>
 
-						<div slot="footer">
-							<sp-button type="success">Go somewhere</sp-button>
-						</div>
-					</sp-card>
-				</div>
-				<div class="sp-grid-item">
-					<sp-card>
-						<span slot="header">Spark Card</span>
+							<div slot="footer">
+								<sp-button type="success">Go somewhere</sp-button>
+							</div>
+						</sp-card>
+					</div>
+					<div class="sp-grid-item">
+						<sp-card>
+							<span slot="header">Spark Card</span>
 
-						<div slot="body">
-							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-						</div>
+							<div slot="body">
+								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+							</div>
 
-						<div slot="footer">
-							<sp-button type="danger">Go somewhere</sp-button>
-						</div>
-					</sp-card>
+							<div slot="footer">
+								<sp-button type="danger">Go somewhere</sp-button>
+							</div>
+						</sp-card>
+					</div>
 				</div>
 			</div>
+
+			<h3>Spark Chips</h3>
+			<div class="sp-row">
+				<div class="sp-grid-expand">
+					<div class="sp-grid-item">
+						<sp-chip text="Basic Chip"/>
+					</div>
+					<div class="sp-grid-item">
+						<sp-chip text="Avatar Text">
+							<div slot="image"><img src="./assets/card-image.jpg"></div>
+						</sp-chip>
+					</div>
+					<div class="sp-grid-item">
+						<sp-chip text="Closable Chip" closable />
+					</div>
+					<div class="sp-grid-item">
+						<sp-chip color="primary" text="Primary Closable Chip" closable />
+					</div>
+					<div class="sp-grid-item">
+						<sp-chip color="success" text="Success Closable Chip" closable />
+					</div>
+					<div class="sp-grid-item">
+						<sp-chip color="warning" text="Warning Closable Chip" closable />
+					</div>
+					<div class="sp-grid-item">
+						<sp-chip color="danger" text="Primary Closable Chip" closable />
+					</div>
+				</div>
+			</div>
+
+			<h3>Spark Collapse</h3>
+
 		</div>
 	</div>
 </template>

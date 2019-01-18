@@ -31,9 +31,6 @@
 			image: {
 				type: Boolean
 			}
-		},
-		mounted() {
-			console.log(this.file)
 		}
 	}
 </script>

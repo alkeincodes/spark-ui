@@ -1,4 +1,4 @@
-import spark from './Modal'
+import spark from './Chip'
 
 export default Vue => {
 	Vue.component(spark.name, spark)
