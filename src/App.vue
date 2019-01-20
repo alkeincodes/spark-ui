@@ -118,7 +118,7 @@
 					</div>
 					<div class="sp-grid-item">
 						<sp-chip text="Avatar Text">
-							<div slot="image"><img src="./assets/card-image.jpg"></div>
+							<img slot="image" src="./assets/card-image.jpg">
 						</sp-chip>
 					</div>
 					<div class="sp-grid-item">
