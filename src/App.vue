@@ -1,6 +1,6 @@
 <template>
 	<div id="app">
-		<img alt="Vue logo" src="./assets/logo.png">
+		<img alt="Vue logo" src="./assets/spark-ui_logo/spark-ui.svg" style="width: 20%;">
 		<HelloWorld msg="Welcome to Spark-ui"/>
 		<div class="sp-components">
 			<h3>Buttons</h3>
@@ -141,6 +141,11 @@
 
 			<h3>Spark Collapse</h3>
 
+
+			<h3>Navbar</h3>
+			<div class="wrapper">
+				<sp-navbar></sp-navbar>
+			</div>
 		</div>
 	</div>
 </template>

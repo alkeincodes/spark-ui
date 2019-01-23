@@ -26,6 +26,11 @@ $boxShadow: 0 4px 20px 0 rgba(0,0,0,.09);
 	background: transparent;
 }
 
+.wrapper {
+	width: 96%;
+	margin: 0 auto;
+}
+
 /*
  * GRID COMPONENT
  */
@@ -481,4 +486,40 @@ button {
 .sp-chip-warning {
 	background-image: $gradientWarning;
 	color: #fff;
+}
+
+/*
+ * NAVBAR
+ */
+
+.sp-navbar-container {
+	font-family: 'Lato', sans-serif;
+	padding: .5em 1em;
+	background: #f7f7f7;
+	-webkit-box-shadow: $boxShadow;
+	box-shadow: $boxShadow;
+
+
+	.sp-navbar-content {
+		display: flex;
+		align-items: center;
+
+		.logo-container {
+			width: 50px;
+		}
+
+		.sp-navbar-links {
+			a {
+				text-decoration: none;
+				padding-right: 10px; 
+				color: #3e3e3e;
+			}
+			.site-name {
+				color: #3e3e3e;
+				font-weight: bold;
+				font-size: 1.1em;
+				margin-right: 1em;
+			}
+		}
+	}
 }
