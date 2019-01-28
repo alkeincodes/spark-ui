@@ -431,10 +431,12 @@ button:active {
  */
 .sp-navbar-container {
   font-family: "Lato", sans-serif;
-  padding: 0.5em 1em;
   background: #f7f7f7;
   -webkit-box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.09);
   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.09);
+  position: absolute;
+  width: 100%;
+  top: 0;
 }
 .sp-navbar-container .sp-navbar-content {
   display: flex;
@@ -445,14 +447,55 @@ button:active {
 }
 .sp-navbar-container .sp-navbar-content .sp-navbar-links a {
   text-decoration: none;
-  padding-right: 10px;
+  padding: 1.4em 0;
+  margin-right: 1.3em;
   color: #3e3e3e;
+}
+.sp-navbar-container .sp-navbar-content .sp-navbar-links a.router-link-exact-active {
+  position: relative;
+  background: linear-gradient(to right, #ff3c38, #fd615e);
+}
+.sp-navbar-container .sp-navbar-content .sp-navbar-links span {
+  background: #f7f7f7;
+  padding: 1.4em 1em 1.2em 1em;
 }
 .sp-navbar-container .sp-navbar-content .sp-navbar-links .site-name {
   color: #3e3e3e;
   font-weight: bold;
   font-size: 1.1em;
   margin-right: 1em;
+}
+
+/* 
+ * Grid Components
+ */
+.sp-row {
+  display: flex;
+  width: 100%;
+}
+
+.sp-col-12 {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin-left: 0%;
+  width: 100%;
+}
+
+.sp-col-6 {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin-left: 0%;
+  width: 50%;
+}
+
+.sp-col-4 {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin-left: 0%;
+  width: 33.3333%;
 }
 
 /*# sourceMappingURL=app.css.map */

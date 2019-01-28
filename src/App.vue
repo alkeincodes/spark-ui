@@ -1,8 +1,6 @@
 <template>
 	<div id="app">
-		<img alt="Vue logo" src="./assets/spark-ui_logo/spark-ui.svg" style="width: 20%;">
-		<HelloWorld msg="Welcome to Spark-ui"/>
-		<div class="sp-components">
+			<!-- <div class="sp-components">
 			<h3>Buttons</h3>
 			<div class="spark-button-components">
 				<sp-button type="primary">Primary</sp-button>
@@ -146,17 +144,23 @@
 			<div class="wrapper">
 				<sp-navbar></sp-navbar>
 			</div>
-		</div>
+		</div> -->
+		<sp-site-nav></sp-site-nav>
+		<transition name="fade">
+			<router-view></router-view>
+		</transition>
 	</div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import SpSiteNav from './components/SiteNav.vue'
 
 export default {
 	name: 'app',
 	components: {
-		HelloWorld
+		HelloWorld,
+		SpSiteNav
 	},
 	data() {
 		return {
@@ -167,7 +171,7 @@ export default {
 			],
 			showDefaultModal: false,
 			showZoomModal: false,
-			showSpinModal: false
+			showSpinModal: false,
 		}
 	},
 	methods: {
@@ -185,7 +189,24 @@ export default {
 	-moz-osx-font-smoothing: grayscale;
 	text-align: center;
 	color: #2c3e50;
-	margin-top: 60px;
+}
+
+/*transitions*/
+.fade-enter-active, .fade-leave-active {
+  transition-property: opacity;
+  transition-duration: .25s;
+}
+
+.fade-enter-active {
+  transition-delay: .25s;
+}
+
+.fade-enter, .fade-leave-active {
+  opacity: 0
+}
+
+.banner {
+	margin-top: 6em;
 }
 
 .spark-components-row {
