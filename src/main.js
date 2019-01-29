@@ -15,6 +15,8 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 // COMPONENTS
 import Home from './components/Home'
 import Documentation from './components/Documentation'
+import Alert from './components/Documentation/Alert'
+import Installation from './components/Documentation/Installation'
 
 library.add(faQuestionCircle)
 library.add(faExclamationTriangle)
@@ -29,7 +31,12 @@ Vue.use(VueRouter)
 
 const routes = [
 	{ path: '/', component: Home },
-	{ path: '/documentation', component: Documentation }
+	{ path: '/documentation', component: Documentation, 
+	  children: [
+	  	{ path: '', component: Installation },
+	  	{ path: 'alert', component: Alert }
+	  ]
+	}
 ]
 
 const router = new VueRouter({

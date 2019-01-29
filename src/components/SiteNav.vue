@@ -21,7 +21,10 @@
 
 <script>
 	export default {
-		name: 'SpSiteNav'
+		name: 'SpSiteNav',
+		methods: {
+
+		}
 	}
 </script>
 

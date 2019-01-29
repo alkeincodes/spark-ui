@@ -146,7 +146,7 @@
 			</div>
 		</div> -->
 		<sp-site-nav></sp-site-nav>
-		<transition name="fade">
+		<transition name="fade" mode="out-in" @beforeLeave="beforeLeave" @enter="enter" @afterEnter="afterEnter">
 			<router-view></router-view>
 		</transition>
 	</div>
@@ -164,20 +164,28 @@ export default {
 	},
 	data() {
 		return {
-			items: [
-				{ name: 'Link 1', href: 'www.google.com' },
-				{ name: 'Link 2', href: 'www.github.com' },
-				{ name: 'Link 3', href: 'www.youtube.com', active: true },
-			],
 			showDefaultModal: false,
 			showZoomModal: false,
 			showSpinModal: false,
+			prevHeight: 0
 		}
 	},
 	methods: {
-		testing() {
-			alert('hi')
-		}
+		beforeLeave(element) {
+		  this.prevHeight = getComputedStyle(element).height;
+		},
+		enter(element) {
+		  const { height } = getComputedStyle(element);
+
+		  element.style.height = this.prevHeight;
+
+		  setTimeout(() => {
+			element.style.height = height;
+		  });
+		},
+		afterEnter(element) {
+		  element.style.height = 'auto';
+		},
 	}
 }
 </script>
@@ -187,21 +195,21 @@ export default {
 	font-family: 'Lato', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	text-align: center;
+	/*text-align: center;*/
 	color: #2c3e50;
 }
 
 /*transitions*/
-.fade-enter-active, .fade-leave-active {
-  transition-property: opacity;
-  transition-duration: .25s;
+.fade-enter-active,
+.fade-leave-active {
+  transition-duration: 0.3s;
+  transition-property: height, opacity;
+  transition-timing-function: ease;
+  overflow: hidden;
 }
 
-.fade-enter-active {
-  transition-delay: .25s;
-}
-
-.fade-enter, .fade-leave-active {
+.fade-enter,
+.fade-leave-active {
   opacity: 0
 }
 
