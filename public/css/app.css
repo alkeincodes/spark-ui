@@ -16,13 +16,52 @@ body {
   letter-spacing: -1px;
   font-family: "Open Sans", sans-serif;
   font-weight: normal;
-  color: #848484;
+  color: #ff3c38;
 }
 
 .docs-description {
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
   color: #848484;
+}
+
+.docs-divider {
+  height: 1px;
+  background: #d0d0d0;
+  width: 100%;
+  margin: 1em 0;
+}
+
+.docs-api-table-title {
+  font-family: "Open Sans", sans-serif;
+}
+
+.docs-demo-container {
+  -webkit-box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.01);
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.09);
+}
+.docs-demo-container .docs-demo-content {
+  padding: 2em;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.docs-api-table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  margin: 1em 0;
+}
+.docs-api-table th {
+  background-color: #F2F5F6;
+  border: 1px solid #d0d0d0;
+  padding: 0.6em 1em;
+  font-size: 14px;
+}
+.docs-api-table td {
+  border: 1px solid #d0d0d0;
+  padding: 0.6em 1em;
+  font-size: 13px;
 }
 
 .sp-spacer {
@@ -37,6 +76,40 @@ body {
 .wrapper {
   width: 96%;
   margin: 0 auto;
+}
+
+::-webkit-scrollbar {
+  /* 1 */
+  width: 5px;
+}
+
+::-webkit-scrollbar-button {
+  /* 2 */
+}
+
+::-webkit-scrollbar-track {
+  /* 3 */
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track-piece {
+  /* 4 */
+}
+
+::-webkit-scrollbar-thumb {
+  /* 5 */
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(#14cbde, #5ee7fd);
+}
+
+::-webkit-scrollbar-corner {
+  /* 6 */
+}
+
+::-webkit-resizer {
+  /* 7 */
 }
 
 /*
@@ -166,7 +239,6 @@ button:active {
  * ALERT
  */
 .sp-alert-container {
-  padding: 1em 1.5em;
   border-radius: 5px;
   color: #fff;
   width: 100%;
@@ -182,6 +254,7 @@ button:active {
   display: -webkit-flex;
   /* NEW - Chrome */
   display: flex;
+  padding: 1em 1.5em;
   align-items: center;
   -webkit-user-select: none;
   /* Safari */
@@ -196,6 +269,8 @@ button:active {
   height: 1em;
   font-size: 2em;
   color: rgba(0, 0, 0, 0.2);
+  position: relative;
+  top: -3px;
 }
 .sp-alert-content .alert-icon {
   padding: 5px;
@@ -458,7 +533,7 @@ button:active {
   height: 4em;
   -webkit-box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.09);
   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.09);
-  position: absolute;
+  position: fixed;
   width: 100%;
   top: 0;
   z-index: 200;
@@ -498,7 +573,7 @@ button:active {
   height: 100vh;
   width: 200px;
   background-color: #fbfbfb;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
@@ -528,6 +603,14 @@ button:active {
  * Grid Components
  */
 .sp-row {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
   display: flex;
   width: 100%;
 }
@@ -557,11 +640,8 @@ button:active {
 }
 
 .sp-col-9 {
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  margin-left: 0%;
-  width: 74.99997%;
+  flex: 0 0 75%;
+  max-width: 75%;
 }
 
 .sp-col-8 {

@@ -20,6 +20,8 @@
 						<router-view></router-view>
 					</transition>
 				</div>
+
+				<sp-footer></sp-footer>
 			</div>
 		</div>
 	</div>
@@ -27,9 +29,11 @@
 
 <script>
 
+	import SpFooter from './Documentation/_Footer.vue'
+
 	export default {
-		methods: {
-			
+		components: {
+			SpFooter
 		}
 	}
 </script>

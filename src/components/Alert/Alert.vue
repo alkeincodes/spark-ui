@@ -10,7 +10,7 @@
 				</div>
 				<div class="alert-message"><span><slot/></span></div>
 				<div class="sp-spacer"></div>
-				<div v-show="dismissable" class="alert-close" @click="showAlert = false">&times;</div>
+				<div v-if="dismissable" class="alert-close" @click="showAlert = false">&times;</div>
 			</div>
 		</div>
 	</div>
